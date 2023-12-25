@@ -21,6 +21,9 @@ case $machine in
   "x86")
     arch="386";
   ;;
+  *)
+    echo "Architecture not yet implemented, sorry..."
+    exit 1
 esac
 
 wget https://go.dev/dl/go$version.$os-$arch.tar.gz
