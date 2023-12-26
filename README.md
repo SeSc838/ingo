@@ -7,14 +7,20 @@ Usage on own risk. Currently no all architecture types are implemented only:
   - `x86` -> `386`
 
 ## Installation
-1. Make `ingo` file executable with:
+1. Clone this repo and change into it:
 ```bash
-sudo chmod +x ingo
+git clone https://github.com/SeSc838/ingo.git
+cd ingo
 ```
 
-2. [OPTIONAL] Install `ingo` to your path, by default `make` will copy it to `/usr/bin`:
+2. Make `install_ingo.sh` file executable with:
 ```bash
-make
+sudo chmod +x install_ingo.sh
+```
+
+3. Install `ingo` to your path, by default a symlink to `ingo.sh` will be created in `/usr/bin` this needs `sudo` rights:
+```bash
+./install_ingo.sh
 ```
 
 ## Usage
