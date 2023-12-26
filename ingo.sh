@@ -1,8 +1,8 @@
 #!/bin/bash
 if [ $# -eq 0 ]; then
   echo "No version supplied..."
-  echo "Usage:   ./goup.sh <go-version>"
-  echo "Example: ./goup.sh 1.21.5"
+  echo "Usage:   ingo <go-version>"
+  echo "Example: ingo 1.21.5"
   exit 1
 fi
 version=$1
