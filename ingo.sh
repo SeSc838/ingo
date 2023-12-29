@@ -21,6 +21,9 @@ case $machine in
   "x86")
     arch="386";
   ;;
+  "aarch64")
+    arch="arm64"
+  ;;
   *)
     echo "Architecture not yet implemented, sorry..."
     exit 1

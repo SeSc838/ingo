@@ -5,6 +5,7 @@ A simple and small go installer and updater for linux
 Usage on own risk. Currently no all architecture types are implemented only: 
   - `x86_64` -> `amd64`
   - `x86` -> `386`
+  - `aarch64` -> `arm64`
 
 ## Installation
 1. Clone this repo and change into it:
