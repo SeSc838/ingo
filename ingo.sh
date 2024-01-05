@@ -1,13 +1,34 @@
 #!/bin/bash
 if [ $# -eq 0 ]; then
   echo "No version supplied..."
-  echo "Usage:   ingo <go-version>"
-  echo "Example: ingo 1.21.5"
+  echo "Usage:"   
+  echo "Install specific version: ingo <go-version>"
+  echo "Example:                  ingo 1.21.5"
+  echo "Install latest version:   ingo --lastest"
+  echo "Install latest version:   ingo -l"
   exit 1
 fi
 version=$1
 os=$(uname | tr 'A-Z' 'a-z')
 machine=$(uname -m)
+
+# needs check if go is allready installed
+if !go version &> /dev/null; then 
+  currentversion="-1";
+else
+  currentversion=$(go version | grep -oP '[0-9]\.[0-9]*\.[0-9]')
+fi
+
+newestversion=$(curl 'https://go.dev/VERSION?m=text' | grep -oP '[0-9]\.[0-9]*\.[0-9]')
+
+if [ $version = "--latest" ] || [ $version = "-l" ]; then
+  version=$newestversion
+fi
+
+if [ $currentversion = $version ]; then
+  echo "Version already installed"
+  exit 0
+fi
 
 if [ $os -ne "linux" ]; then
   echo "Script only working on linux..."
