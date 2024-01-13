@@ -59,7 +59,7 @@ rm go$version.$os-$arch.tar.gz
 go version
 
 if [ $? -ne 0 ]; then
-  echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.profile
+  echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.profile
   source ~/.profile
   go version
   if [ $? -ne 0 ]; then
