@@ -19,7 +19,7 @@ else
   currentversion=$(go version | grep -oP '[0-9]\.[0-9]*\.[0-9]')
 fi
 
-newestversion=$(curl 'https://go.dev/VERSION?m=text' | grep -oP '[0-9]\.[0-9]*\.[0-9]')
+newestversion=$(curl -s 'https://go.dev/VERSION?m=text' | grep -oP '[0-9]\.[0-9]*\.[0-9]')
 
 if [ $version = "--latest" ] || [ $version = "-l" ]; then
   version=$newestversion
